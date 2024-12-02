@@ -72,12 +72,29 @@
       link.style.backgroundColor = "#1e90ff"; // Mengubah warna latar belakang saat diklik
       link.style.opacity = "0.8"; // Mengurangi opasitas saat klik
 
+      // Menyimpan status klik di sessionStorage
+      sessionStorage.setItem('clicked', 'true');
+
       // Menunggu 2 detik sebelum mengalihkan ke URL
       setTimeout(function() {
         window.location.href = link.href; // Mengalihkan ke URL setelah 2 detik
       }, 169); // Menggunakan 169 ms agar tetap ada efek klik
     });
   });
-</script>
+
+  // Mengatur ulang gaya setelah halaman dimuat jika sebelumnya telah diklik
+  window.addEventListener('load', function() {
+    if (sessionStorage.getItem('clicked') === 'true') {
+      // Reset warna latar belakang dan opasitas
+      document.querySelectorAll('.link').forEach(function(link) {
+        link.style.backgroundColor = ""; // Reset warna latar belakang
+        link.style.opacity = ""; // Reset opasitas
+      });
+
+      // Hapus status klik setelah reset
+      sessionStorage.removeItem('clicked');
+    }
+  });
+    </script>
   </body>
 </html>
