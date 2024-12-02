@@ -11,7 +11,6 @@
     <!-- Core theme CSS -->
     <link rel="stylesheet" href="style.css">
   </head>
-
   <body>
     <!-- Parallax Pixel Background Animation -->
     <section class="animated-background">
@@ -21,75 +20,64 @@
     </section>
     <!-- End of Parallax Pixel Background Animation -->
 
+    <!-- Profile Section -->
     <a id="profilePicture" href="#popup">
       <img src="J.png" alt="Profile Picture">
     </a>
 
-    <div class="overlay" id="popup">
-      <div class="popup">
-        <div class="popup-photo">
-          <a href="J.png" target="_blank">
-            <img src="J.png" alt="Profile Picture">
-          </a>
-        </div>
-        <div class="popup-quote">
-          But... the sensation that I've lost something lingers for a longtime after I wake up.
-        </div>
-        <a class="popup-close" onclick="history.back()">&times;</a>
-      </div>
-    </div>
-
     <div id="userName">
-      LIONER HAKIM 
+      JRH
     </div>
 
-   <div id="projects">
-  <h2>Proyek Saya</h2>
-  <!-- JRH -->
-  <a class="link" href="https://lionerhakim.github.io/J./" target="_blank">
-    <i class="fa fa-globe">&nbsp;</i> JRH
-  </a>
-
-  <!-- Selamat Love -->
-  <a class="link" href="https://lionerhakim.github.io/SelamatLove" target="_blank">
-    <i class="fa fa-heart">&nbsp;</i> Selamat Love
-  </a>
-
-  <!-- Ultah For You -->
-  <a class="link" href="https://lionerhakim.github.io/Ultah" target="_blank">
-    <i class="fa fa-birthday-cake">&nbsp;</i> Ultah For You
-  </a>
-
-  <!-- Exness Track (Finance Icon) -->
-  <a class="link" href="https://one.exnesstrack.org/a/5xww7w9ptk?platform=mobile&pid=mobile_share" target="_blank">
-    <i class="fa fa-chart-line">&nbsp;</i> Exness FOREX
-  </a>
-
-  <!-- TikTok J.XRP (Music Icon) -->
-  <a class="link" href="https://www.tiktok.com/@j.xrp?_t=8rsI9JOmaIy&_r=1" target="_blank">
-    <i class="fa fa-music">&nbsp;</i> TikTok J.XRP
-  </a>
-
-  <!-- Binance Referral (Exchange Icon) -->
-  <a class="link" href="https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=id&ref=CPA_00506M8DY9" target="_blank">
-    <i class="fa fa-exchange-alt">&nbsp;</i> Binance CRYPTOCURRENCY 
-  </a>
-
-  <!-- Bitget Referral (Coin Icon) -->
-  <a class="link" href="https://share.bitget.com/u/B017HHAZ" target="_blank">
-    <i class="fa fa-coins">&nbsp;</i> Bitget CRYPTOCURRENCY
-  </a>
-</div>
- 
- 
-</div>
-    <div id="hashtag">
-      Mahirlah dalam berbagai hal, tapi fokuskan dirimu pada satu bidang.
+    <!-- Links Section -->
+    <div id="links">
+      <a class="link" href="https://lionerhakim.github.io/J./" target="_blank">
+        <i class="fa fa-globe"></i> MY PROFILE
+      </a>
+      <a class="link" href="https://lionerhakim.github.io/SelamatLove" target="_blank">
+        <i class="fa fa-heart"></i> SELAMAT LOVE
+      </a>
+      <a class="link" href="https://lionerhakim.github.io/Ultah" target="_blank">
+        <i class="fa fa-birthday-cake"></i> ULTAH FOR YOU
+      </a>
+      <a class="link" href="https://one.exnesstrack.org/a/5xww7w9ptk?platform=mobile&pid=mobile_share" target="_blank">
+        <i class="fa fa-chart-line"></i> EXNESS
+      </a>
+      <a class="link" href="https://www.tiktok.com/@j.xrp?_t=8rsI9JOmaIy&_r=1" target="_blank">
+        <i class="fa fa-video"></i> TIKTOK J.XRP
+      </a>
+      <a class="link" href="https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=id&ref=CPA_00506M8DY9" target="_blank">
+        <i class="fa fa-chart-bar"></i> BINANCE
+      </a>
+      <a class="link" href="https://share.bitget.com/u/B017HHAZ" target="_blank">
+        <i class="fa fa-coins"></i> BITGET
+      </a>
     </div>
-    
-    <div id="hashtag">
-      Jadilah tak terprediksi; diam, lalu mengejutkan.
-    </div>
-    
+
+    <!-- Footer -->
+    <footer>
+      Copyright &copy; <span id="year"></span> JRH. All Rights Reserved.
+    </footer>
+
+    <script>
+      // Update tahun secara otomatis
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Menambahkan delay 2 detik sebelum mengalihkan pengguna ke link
+      document.querySelectorAll('.link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // Mencegah pengalihan langsung
+
+          // Efek visual saat klik (misalnya mengubah warna atau opasitas)
+          link.style.backgroundColor = "#1e90ff"; // Mengubah warna latar belakang saat diklik
+          link.style.opacity = "0.8"; // Mengurangi opasitas saat klik
+
+          // Menunggu 2 detik sebelum mengalihkan ke URL
+          setTimeout(function() {
+            window.location.href = link.href; // Mengalihkan ke URL setelah 2 detik
+          }, 500);
+        });
+      });
+    </script>
   </body>
 </html>
