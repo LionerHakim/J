@@ -100,7 +100,7 @@ body {
   margin-left: -2px; /* Sesuaikan posisi */
 }
 
-/* Hover Effect (Red background) */
+/* Hover Effect */
 .link:hover {
   transform: translateY(-5px);
   background-color: #ff0000; /* Warna merah saat hover */
@@ -108,13 +108,22 @@ body {
   opacity: 0.9;
 }
 
-/* Active/Clicked Effect (Blue background, then reset) */
+/* Active/Clicked Effect */
 .link:active {
   transform: scale(0.98);
   background-color: #1e90ff; /* Warna biru saat diklik */
   color: white; /* Warna teks putih */
   opacity: 1;
   box-shadow: 0 5px 15px rgba(0, 0, 255, 0.8);
+}
+
+/* Reset State */
+.link:not(:hover):not(:active) {
+  transform: none; /* Tidak ada transformasi */
+  background-color: gold; /* Kembali ke warna awal */
+  color: black; /* Kembali ke teks awal */
+  box-shadow: none; /* Hilangkan bayangan */
+  opacity: 1; /* Tidak ada transparansi */
 }
 
 /* Icon Styling */
