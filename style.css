@@ -1,12 +1,12 @@
 /* Universal Styling */
 body {
   margin: 0;
-  padding: 0; /* Menghilangkan padding default */
+  padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #121212; /* Hitam gelap */
+  background-color: #121212; /* Warna latar belakang hitam gelap */
   color: white;
-  overflow: hidden; /* Menghilangkan scroll */
-  height: 100vh; /* Menyesuaikan tinggi layar pengguna */
+  overflow: hidden; /* Hilangkan scroll */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,12 +108,13 @@ body {
   opacity: 0.9;
 }
 
-/* Active/Clicked Effect (Now Blue) */
+/* Active/Clicked Effect (Blue background, then reset) */
 .link:active {
   transform: scale(0.98);
-  box-shadow: 0px 5px 15px rgba(0, 0, 255, 0.8); /* Bayangan biru saat klik */
   background-color: #1e90ff; /* Warna biru saat diklik */
+  color: white; /* Warna teks putih */
   opacity: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 255, 0.8);
 }
 
 /* Icon Styling */
@@ -134,7 +135,7 @@ footer {
   border-top: 1px solid gold;
 }
 
-/* Responsiveness for smaller screens */
+/* Responsiveness for medium screens */
 @media screen and (max-width: 768px) {
   #userName {
     font-size: 1.5rem; /* Menyesuaikan ukuran font pada layar lebih kecil */
@@ -153,6 +154,7 @@ footer {
   }
 }
 
+/* Responsiveness for smaller screens */
 @media screen and (max-width: 480px) {
   #profilePicture {
     width: 80px;
