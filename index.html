@@ -60,30 +60,28 @@
     </footer>
 
     <script>
-  // Update tahun secara otomatis
-  document.getElementById("year").textContent = new Date().getFullYear();
+      // Update tahun secara otomatis
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Menambahkan delay 2 detik sebelum mengalihkan pengguna ke link
-  document.querySelectorAll('.link').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); // Mencegah pengalihan langsung
+      // Menambahkan event listener untuk setiap link
+      document.querySelectorAll('.link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // Mencegah pengalihan langsung
 
-      // Efek visual saat klik (misalnya mengubah warna atau opasitas)
-      link.style.backgroundColor = "#1e90ff"; // Mengubah warna latar belakang saat diklik
-      link.style.opacity = "0.8"; // Mengurangi opasitas saat klik
+          // Menghapus efek klik segera setelah diklik
+          link.classList.add('clicked'); // Menambahkan kelas clicked untuk styling khusus
 
-      // Menghilangkan efek klik segera setelah klik
-      setTimeout(function() {
-        link.style.backgroundColor = ""; // Reset warna latar belakang
-        link.style.opacity = ""; // Reset opasitas
-      }, 0); // Menghilangkan efek segera (langsung setelah klik)
+          // Menghilangkan efek klik setelah 50ms
+          setTimeout(function() {
+            link.classList.remove('clicked'); // Menghapus kelas clicked setelah efek hilang
+          }, 50); // Waktu singkat untuk reset efek
 
-      // Mengalihkan ke URL setelah pengalihan dilakukan
-      setTimeout(function() {
-        window.location.href = link.href; // Mengalihkan ke URL setelah efek hilang
-      }, 169); // Pengalihan terjadi setelah efek klik selesai
-    });
-  });
+          // Mengalihkan ke URL setelah 169ms
+          setTimeout(function() {
+            window.location.href = link.href; // Mengalihkan ke URL setelah efek hilang
+          }, 169);
+        });
+      });
     </script>
   </body>
 </html>
