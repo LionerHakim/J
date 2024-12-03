@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background-color: #121212; /* Dark background for the whole page */
-  color: #f7f7f7; /* Light text for contrast */
+  background-color: #121212; /* Dark background */
+  color: #f7f7f7; /* Lighter text for contrast */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ body {
 #profilePicture {
   display: block;
   margin: 20px auto;
-  width: 90px;
+  width: 90px; /* Adjusted to be slightly smaller for iOS-style */
   height: 90px;
   border-radius: 50%;
   overflow: hidden;
@@ -45,7 +45,7 @@ body {
 /* User Name */
 #userName {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.3rem; /* Smaller size for cleaner look */
   font-weight: 500;
   margin-top: 12px;
   color: #f7f7f7;
@@ -62,28 +62,12 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  padding: 0 15px;
+  padding: 0 15px; /* Added padding for better spacing */
   width: 100%;
   max-width: 350px;
-  border-radius: 16px;
+  border-radius: 16px; /* Rounded container like iOS */
   background-color: #ffcc00; /* Golden yellow */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Adding elegant "before" effect */
-#links::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #ffcc00 20%, #ff9900 80%);
-  opacity: 0.2;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for the links container */
 }
 
 /* Style for Links */
@@ -94,34 +78,25 @@ body {
   background-color: #f0f0f5;
   border: 1px solid #ddd;
   color: #007aff;
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Smaller font size for cleaner look */
   font-weight: 400;
   padding: 10px 15px;
   border-radius: 8px;
   width: 100%;
-  margin: 8px 0;
+  margin: 8px 0; /* Smaller margin for compact look */
   text-decoration: none;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect for Links */
 .link:hover {
-  background-color: #e2e2f2;
+  background-color: #e2e2f2; /* Slight gray background for hover */
   transform: translateY(-3px);
 }
 
-/* Elegant Click Effect */
 .link:active {
-  background-color: #d0d0d6;
+  background-color: #d0d0d6; /* Darker gray on active */
   transform: scale(0.98);
-  box-shadow: 0 5px 20px rgba(255, 153, 0, 0.5); /* Golden shadow on click */
-  transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease;
-}
-
-/* Remove box-shadow once the click is over */
-.link:focus {
-  outline: none;
-  box-shadow: none;
+  box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3); /* Blue shadow on click */
 }
 
 .link i {
