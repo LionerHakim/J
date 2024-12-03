@@ -5,13 +5,36 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #121212; /* Warna latar belakang hitam gelap */
   color: white;
-  overflow: hidden; /* Hilangkan scroll */
-  height: 100vh;
+  overflow-x: hidden; /* Menghindari scroll horizontal */
+  height: 100%; /* Mengatur tinggi menjadi 100% */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease;
+  scroll-behavior: smooth; /* Menambahkan scroll smooth */
+}
+
+/* Parallax Pixel Background Animation */
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('your-background-image-url.jpg') center center / cover no-repeat;
+  animation: backgroundAnimation 25s linear infinite;
+  z-index: -1;
+}
+
+/* Parallax Background Animation */
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 /* Profile Picture */
@@ -64,6 +87,10 @@ body {
   margin-top: 30px;
   width: 100%;
   padding: 0 10px; /* Memberikan ruang di sisi kiri dan kanan */
+  overflow-y: auto; /* Tambahkan scroll vertikal jika diperlukan */
+  max-height: 70vh; /* Membatasi tinggi agar tidak melebihi 70% tinggi layar */
+  scrollbar-width: thin; /* Mengubah lebar scrollbar */
+  scrollbar-color: #ff0000 #121212; /* Mengatur warna scrollbar */
 }
 
 /* Style for Links */
