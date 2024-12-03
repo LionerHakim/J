@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Core theme CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Smooth Scroll JS (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
   </head>
   <body>
     <!-- Parallax Pixel Background Animation -->
@@ -26,8 +28,8 @@
     </a>
 
     <div id="userName">
-  J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
-</div>
+      J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
+    </div>
 
     <!-- Links Section -->
     <div id="links">
@@ -70,25 +72,26 @@
     </footer>
 
     <script>
-      // Update tahun secara otomatis
+      // Smooth Scroll Initialization
+      var scroll = new SmoothScroll('a[href*="#"]');
+
+      // Update year automatically
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Menambahkan event listener untuk setiap link
+      // Event listener for links to apply custom click effects
       document.querySelectorAll('.link').forEach(function(link) {
         link.addEventListener('click', function(e) {
-          e.preventDefault(); // Mencegah pengalihan langsung
+          e.preventDefault(); // Prevent immediate redirect
 
-          // Menghapus efek klik segera setelah diklik
-          link.classList.add('clicked'); // Menambahkan kelas clicked untuk styling khusus
+          // Add custom click effect
+          link.classList.add('clicked');
 
-          // Menghilangkan efek klik setelah 50ms
           setTimeout(function() {
-            link.classList.remove('clicked'); // Menghapus kelas clicked setelah efek hilang
-          }, 50); // Waktu singkat untuk reset efek
+            link.classList.remove('clicked'); // Remove the effect after a short time
+          }, 50);
 
-          // Mengalihkan ke URL setelah 169ms
           setTimeout(function() {
-            window.location.href = link.href; // Mengalihkan ke URL setelah efek hilang
+            window.location.href = link.href; // Redirect after the effect
           }, 169);
         });
       });
