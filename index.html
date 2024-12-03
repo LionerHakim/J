@@ -12,52 +12,46 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- Main Container -->
-    <div class="container">
-      <!-- Parallax Pixel Background Animation -->
-      <section class="animated-background">
-        <div id="stars1"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-      </section>
-      <!-- End of Parallax Pixel Background Animation -->
+    <!-- Parallax Pixel Background Animation -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- End of Parallax Pixel Background Animation -->
 
-      <!-- Profile Section -->
-      <a id="profilePicture" href="#popup">
-        <img src="J.png" alt="Profile Picture">
+    <!-- Profile Section -->
+    <a id="profilePicture" href="#popup">
+      <img src="J.png" alt="Profile Picture">
+    </a>
+
+    <div id="userName">
+      JRH
+    </div>
+
+    <!-- Links Section -->
+    <div id="links">
+      <a class="link" href="https://lionerhakim.github.io/J./" target="_blank">
+        <i class="fa fa-globe"></i> MY PROFILE
       </a>
-
-      <div id="userName">
-        JRH
-      </div>
-
-      <!-- Links Section -->
-      <div id="links">
-        <a class="link" href="https://lionerhakim.github.io/J./" target="_blank">
-          <i class="fa fa-globe"></i> MY PROFILE
-        </a>
-        <a class="link" href="https://drive.google.com/drive/folders/1dp2B0wK9NMtkLo45KWXCOD3DFTelLS2j" target="_blank">
-          <i class="fa fa-university"></i> ILMU EKONOMI
-        </a>
-        <a class="link" href="https://www.tiktok.com/@j.xrp?_t=8rsI9JOmaIy&_r=1" target="_blank">
-          <i class="fa fa-video"></i> TIKTOK
-        </a>
-        <a class="link" href="https://lionerhakim.github.io/SelamatLove" target="_blank">
-          <i class="fa fa-heart"></i> SELAMAT LOVE
-        </a>
-        <a class="link" href="https://lionerhakim.github.io/Ultah" target="_blank">
-          <i class="fa fa-birthday-cake"></i> ULTAH FOR YOU
-        </a>
-        <a class="link" href="https://one.exnesstrack.org/a/5xww7w9ptk?platform=mobile&pid=mobile_share" target="_blank">
-          <i class="fa fa-chart-line"></i> EXNESS
-        </a>
-        <a class="link" href="https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=id&ref=CPA_00506M8DY9" target="_blank">
-          <i class="fa fa-chart-bar"></i> BINANCE
-        </a>
-        <a class="link" href="https://share.bitget.com/u/B017HHAZ" target="_blank">
-          <i class="fa fa-coins"></i> BITGET
-        </a>
-      </div>
+      <a class="link" href="https://www.tiktok.com/@j.xrp?_t=8rsI9JOmaIy&_r=1" target="_blank">
+        <i class="fa fa-video"></i> TIKTOK J.XRP
+      </a>
+      <a class="link" href="https://lionerhakim.github.io/SelamatLove" target="_blank">
+        <i class="fa fa-heart"></i> SELAMAT LOVE
+      </a>
+      <a class="link" href="https://lionerhakim.github.io/Ultah" target="_blank">
+        <i class="fa fa-birthday-cake"></i> ULTAH FOR YOU
+      </a>
+      <a class="link" href="https://one.exnesstrack.org/a/5xww7w9ptk?platform=mobile&pid=mobile_share" target="_blank">
+        <i class="fa fa-chart-line"></i> EXNESS
+      </a>
+      <a class="link" href="https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=id&ref=CPA_00506M8DY9" target="_blank">
+        <i class="fa fa-chart-bar"></i> BINANCE
+      </a>
+      <a class="link" href="https://share.bitget.com/u/B017HHAZ" target="_blank">
+        <i class="fa fa-coins"></i> BITGET
+      </a>
     </div>
 
     <!-- Footer -->
@@ -80,12 +74,12 @@
           // Menghilangkan efek klik setelah 50ms
           setTimeout(function() {
             link.classList.remove('clicked'); // Menghapus kelas clicked setelah efek hilang
-          }, 5); // Waktu singkat untuk reset efek
+          }, 50); // Waktu singkat untuk reset efek
 
           // Mengalihkan ke URL setelah 169ms
           setTimeout(function() {
             window.location.href = link.href; // Mengalihkan ke URL setelah efek hilang
-          }, 241);
+          }, 169);
         });
       });
     </script>
