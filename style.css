@@ -5,12 +5,12 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #121212; /* Warna latar belakang hitam gelap */
   color: white;
-  overflow: hidden; /* Hilangkan scroll */
-  height: 100vh;
+  height: 100%; /* Ganti dari 100vh ke 100% agar konten bisa di-scroll */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Agar konten tidak terpusat di tengah */
   align-items: center;
+  overflow-y: auto; /* Menambahkan scroll vertikal */
   transition: background-color 0.3s ease;
 }
 
