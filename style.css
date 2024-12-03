@@ -92,10 +92,46 @@ body {
   align-items: center;
   justify-content: flex-start;
   background-color: #f0f0f5;
+/* Links Section */
+#links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 16px;
+  background-color: #ff4c4c; /* Red background for the links section */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adding elegant "before" effect */
+#links::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff4c4c 20%, #ff1a1a 80%); /* Red gradient effect */
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Style for Links */
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f0f0f5;
   border: 1px solid #ddd;
-  color: #007aff;
+  color: #007aff; /* Initial text color - Blue */
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: bold; /* Bold font for links */
   padding: 10px 15px;
   border-radius: 8px;
   width: 100%;
@@ -108,7 +144,7 @@ body {
 .link:hover {
   background-color: #e2e2f2; /* Slight gray background for hover */
   transform: translateY(-3px);
-  color: #ffcc00; /* Color change on hover */
+  color: #ff4c4c; /* Change color to red on hover */
 }
 
 /* Before click effect */
@@ -119,20 +155,20 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 204, 0, 0.1); /* Soft golden glow */
+  background-color: rgba(255, 76, 76, 0.1); /* Soft red glow */
   transition: background-color 0.3s ease;
 }
 
 .link:hover::before {
-  background-color: rgba(255, 204, 0, 0.3); /* Stronger glow on hover */
+  background-color: rgba(255, 76, 76, 0.3); /* Stronger red glow on hover */
 }
 
 /* After click effect */
 .link:active {
   background-color: #d0d0d6;
   transform: scale(0.98);
-  box-shadow: 0 5px 20px rgba(255, 153, 0, 0.5); /* Golden shadow on click */
-  color: #fff; /* Change text color on click */
+  box-shadow: 0 5px 20px rgba(255, 76, 76, 0.5); /* Red shadow on click */
+  color: #fff; /* Change text color to white on click */
   transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
 }
 
