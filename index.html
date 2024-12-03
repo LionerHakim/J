@@ -10,17 +10,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Core theme CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Smooth Scroll JS (Optional) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
   </head>
   <body>
-    <!-- Parallax Pixel Background Animation -->
-    <section class="animated-background">
-      <div id="stars1"></div>
-      <div id="stars2"></div>
-      <div id="stars3"></div>
-    </section>
-    <!-- End of Parallax Pixel Background Animation -->
 
     <!-- Profile Section -->
     <a id="profilePicture" href="#popup">
@@ -28,8 +19,8 @@
     </a>
 
     <div id="userName">
-      J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
-    </div>
+  J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
+</div>
 
     <!-- Links Section -->
     <div id="links">
@@ -72,26 +63,25 @@
     </footer>
 
     <script>
-      // Smooth Scroll Initialization
-      var scroll = new SmoothScroll('a[href*="#"]');
-
-      // Update year automatically
+      // Update tahun secara otomatis
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Event listener for links to apply custom click effects
+      // Menambahkan event listener untuk setiap link
       document.querySelectorAll('.link').forEach(function(link) {
         link.addEventListener('click', function(e) {
-          e.preventDefault(); // Prevent immediate redirect
+          e.preventDefault(); // Mencegah pengalihan langsung
 
-          // Add custom click effect
-          link.classList.add('clicked');
+          // Menghapus efek klik segera setelah diklik
+          link.classList.add('clicked'); // Menambahkan kelas clicked untuk styling khusus
 
+          // Menghilangkan efek klik setelah 50ms
           setTimeout(function() {
-            link.classList.remove('clicked'); // Remove the effect after a short time
-          }, 50);
+            link.classList.remove('clicked'); // Menghapus kelas clicked setelah efek hilang
+          }, 50); // Waktu singkat untuk reset efek
 
+          // Mengalihkan ke URL setelah 169ms
           setTimeout(function() {
-            window.location.href = link.href; // Redirect after the effect
+            window.location.href = link.href; // Mengalihkan ke URL setelah efek hilang
           }, 169);
         });
       });
