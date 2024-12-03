@@ -42,14 +42,14 @@ html, body {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 8px; /* Lebar scrollbar */
-  height: 8px; /* Menambah ukuran tinggi scrollbar */
+  width: 0px; /* Lebar scrollbar */
+  height: 0px; /* Menambah ukuran tinggi scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #000000; /* Warna hitam pada scrollbar */
-  border-radius: 10px;
-  border: 3px solid #121212; /* Border yang lebih tajam */
+  border-radius: 0px;
+  border: 0px solid #121212; /* Border yang lebih tajam */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -58,7 +58,7 @@ html, body {
 
 ::-webkit-scrollbar-track {
   background-color: #121212; /* Warna latar belakang track scrollbar */
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 /* Scrollbar Kiri */
@@ -67,10 +67,10 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 12px;
-  height: 100%;
+  width: 0px;
+  height: 0%;
   background-color: transparent;
-  border-right: 3px solid #1e90ff; /* Border biru di sisi kiri */
+  border-right: 0px solid #1e90ff; /* Border biru di sisi kiri */
 }
 
 /* Scrollbar Kanan */
