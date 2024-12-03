@@ -1,19 +1,60 @@
 /* Universal Styling */
 html, body {
-  height: 100%; /* Membuat body dan html mengambil penuh tinggi layar */
-  width: 100%; /* Membuat body dan html mengambil penuh lebar layar */
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: #121212; /* Warna latar belakang hitam gelap */
   color: white;
-  overflow-y: auto; /* Hanya menampilkan scroll vertikal */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  box-sizing: border-box; /* Mengatur box-sizing */
-  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Container utama dengan Scroll */
+.scroll-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wrapper untuk konten utama */
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Scroll vertikal */
+  padding: 10px; /* Untuk jarak konten dari scrollbar */
+}
+
+/* Scrollbar Kiri */
+.scroll-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px; /* Lebar scrollbar kiri */
+  height: 100%;
+  background-color: transparent;
+  border-right: 3px solid #1e90ff; /* Border biru di sisi kiri */
+}
+
+/* Scrollbar Kanan */
+.scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px; /* Lebar scrollbar kanan */
+  height: 100%;
+  background-color: transparent;
+  border-left: 3px solid #1e90ff; /* Border biru di sisi kanan */
 }
 
 /* Scrollbar Styling */
@@ -70,12 +111,12 @@ html, body {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 10px;
-  color: gold; /* Warna emas */
+  color: gold;
   transition: color 0.2s ease;
 }
 
 #userName:hover {
-  color: #ffd700; /* Warna lebih cerah saat hover */
+  color: #ffd700;
 }
 
 /* Links Section */
@@ -85,7 +126,7 @@ html, body {
   align-items: center;
   margin-top: 30px;
   width: 100%;
-  padding: 0 10px; /* Memberikan ruang di sisi kiri dan kanan */
+  padding: 0 10px;
 }
 
 /* Style for Links */
@@ -93,20 +134,20 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: gold; /* Warna emas */
-  border: 2px solid white; /* Border putih */
+  background-color: gold;
+  border: 2px solid white;
   color: black;
-  font-size: 1.5rem; /* Ukuran font besar */
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   padding: 15px 20px;
   border-radius: 8px;
-  width: 100%; /* Menggunakan 100% lebar pada perangkat kecil */
-  max-width: 350px; /* Batas lebar maksimum */
-  margin: 12px auto; /* Jarak antar balok */
+  width: 100%;
+  max-width: 350px;
+  margin: 12px auto;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-  position: relative; /* Untuk garis putih */
+  position: relative;
 }
 
 .link::after {
@@ -118,40 +159,40 @@ html, body {
   height: 4px;
   background-color: white;
   border-radius: 4px;
-  width: calc(100% + 4px); /* Lebih lebar dari balok */
-  margin-left: -2px; /* Sesuaikan posisi */
+  width: calc(100% + 4px);
+  margin-left: -2px;
 }
 
 /* Hover Effect */
 .link:hover {
   transform: translateY(-5px);
-  background-color: #ff0000; /* Warna merah saat hover */
-  color: white; /* Mengubah warna teks menjadi putih agar kontras */
+  background-color: #ff0000;
+  color: white;
   opacity: 0.9;
 }
 
 /* Active/Clicked Effect */
 .link:active {
   transform: scale(0.98);
-  background-color: #1e90ff; /* Warna biru saat diklik */
-  color: white; /* Warna teks putih */
+  background-color: #1e90ff;
+  color: white;
   opacity: 1;
   box-shadow: 0 5px 15px rgba(0, 0, 255, 0.8);
 }
 
 /* Reset State */
 .link:not(:hover):not(:active) {
-  transform: none; /* Tidak ada transformasi */
-  background-color: gold; /* Kembali ke warna awal */
-  color: black; /* Kembali ke teks awal */
-  box-shadow: none; /* Hilangkan bayangan */
-  opacity: 1; /* Tidak ada transparansi */
+  transform: none;
+  background-color: gold;
+  color: black;
+  box-shadow: none;
+  opacity: 1;
 }
 
 /* Icon Styling */
 .link i {
   margin-right: 15px;
-  font-size: 1.8rem; /* Ukuran icon */
+  font-size: 1.8rem;
   transition: transform 0.3s ease;
 }
 
@@ -169,19 +210,19 @@ footer {
 /* Responsiveness for medium screens */
 @media screen and (max-width: 768px) {
   #userName {
-    font-size: 1.5rem; /* Menyesuaikan ukuran font pada layar lebih kecil */
+    font-size: 1.5rem;
   }
 
   #profilePicture {
-    width: 100px; /* Ukuran foto lebih kecil pada layar kecil */
+    width: 100px;
     height: 100px;
   }
 
   .link {
-    font-size: 1.2rem; /* Menyesuaikan ukuran font link */
+    font-size: 1.2rem;
     padding: 12px 18px;
-    width: 90%; /* Lebar link lebih kecil pada perangkat kecil */
-    max-width: 300px; /* Batas lebar */
+    width: 90%;
+    max-width: 300px;
   }
 }
 
@@ -189,36 +230,36 @@ footer {
 @media screen and (max-width: 480px) {
   #profilePicture {
     width: 80px;
-    height: 80px; /* Ukuran lebih kecil di perangkat lebih kecil */
+    height: 80px;
   }
 
   #userName {
-    font-size: 1.2rem; /* Ukuran font lebih kecil di perangkat kecil */
+    font-size: 1.2rem;
   }
 
   .link {
-    font-size: 1rem; /* Lebih kecil lagi ukuran font link */
+    font-size: 1rem;
     padding: 10px 16px;
-    width: 90%; /* Lebar link lebih kecil */
-    max-width: 260px; /* Batas lebar link */
+    width: 90%;
+    max-width: 260px;
   }
 }
 
 /* For very small screens */
 @media screen and (max-width: 375px) {
   #userName {
-    font-size: 1rem; /* Ukuran font lebih kecil */
+    font-size: 1rem;
   }
 
   .link {
-    font-size: 0.9rem; /* Ukuran font sangat kecil pada layar ekstra kecil */
+    font-size: 0.9rem;
     padding: 8px 14px;
-    width: 100%; /* Lebar penuh pada perangkat lebih kecil */
-    max-width: 240px; /* Ukuran lebih kecil */
+    width: 100%;
+    max-width: 240px;
   }
 
   #profilePicture {
     width: 70px;
-    height: 70px; /* Ukuran sangat kecil pada layar kecil */
+    height: 70px;
   }
 }
