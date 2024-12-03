@@ -17,9 +17,9 @@ body {
 /* Profile Picture */
 #profilePicture {
   display: block;
-  margin: 30px auto;
-  width: 120px;
-  height: 120px;
+  margin: 20px auto;
+  width: 100px; /* Reduced size */
+  height: 100px; /* Reduced size */
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid gold;
@@ -45,7 +45,7 @@ body {
 /* User Name */
 #userName {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Reduced size */
   font-weight: bold;
   margin-top: 10px;
   color: gold;
@@ -61,7 +61,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px; /* Reduced space */
   width: 100%;
   padding: 0 10px; /* Spacing on left and right */
 }
@@ -74,14 +74,14 @@ body {
   background-color: gold;
   border: 2px solid white;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Reduced font size */
   font-weight: bold;
   text-transform: uppercase;
-  padding: 15px 20px;
+  padding: 12px 16px; /* Reduced padding */
   border-radius: 8px;
   width: 100%;
-  max-width: 350px;
-  margin: 12px auto;
+  max-width: 300px; /* Reduced max width */
+  margin: 10px auto; /* Reduced margin */
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
   position: relative;
@@ -90,7 +90,7 @@ body {
 .link::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -6px; /* Adjusted position */
   left: 0;
   right: 0;
   height: 4px;
@@ -128,16 +128,16 @@ body {
 
 /* Icon Styling */
 .link i {
-  margin-right: 15px;
-  font-size: 1.8rem;
+  margin-right: 12px; /* Adjusted icon margin */
+  font-size: 1.6rem; /* Slightly smaller icon size */
   transition: transform 0.3s ease;
 }
 
 /* Footer Styling */
 footer {
   text-align: center;
-  margin-top: 30px;
-  padding: 10px 0;
+  margin-top: 20px; /* Reduced space */
+  padding: 8px 0; /* Reduced padding */
   color: white;
   font-size: 0.9rem;
   background-color: black;
@@ -147,38 +147,38 @@ footer {
 /* Responsiveness for medium screens */
 @media screen and (max-width: 768px) {
   #userName {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Smaller font for medium screens */
   }
 
   #profilePicture {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
   .link {
-    font-size: 1.2rem;
-    padding: 12px 18px;
+    font-size: 1.1rem; /* Smaller font for links */
+    padding: 10px 14px; /* Smaller padding */
     width: 90%;
-    max-width: 300px;
+    max-width: 280px; /* Reduced width */
   }
 }
 
 /* Responsiveness for smaller screens */
 @media screen and (max-width: 480px) {
   #profilePicture {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
   }
 
   #userName {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .link {
     font-size: 1rem;
-    padding: 10px 16px;
+    padding: 8px 12px;
     width: 90%;
-    max-width: 260px;
+    max-width: 250px; /* Reduced width */
   }
 }
 
@@ -190,13 +190,13 @@ footer {
 
   .link {
     font-size: 0.9rem;
-    padding: 8px 14px;
+    padding: 8px 10px;
     width: 100%;
-    max-width: 240px;
+    max-width: 230px; /* Further reduced width */
   }
 
   #profilePicture {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px; /* Smaller size on very small screens */
   }
 }
