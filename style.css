@@ -1,55 +1,42 @@
-/* Universal Styling */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #121212; /* Dark background */
-  color: white;
-  height: 100%; /* Ensures the full height is used */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Prevent horizontal scroll */
-  scroll-behavior: smooth; /* Smooth scroll effect */
-}
-
-/* Parallax Pixel Background Animation */
+/* Parallax Background */
 .animated-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('your-background-image-url.jpg') center center / cover no-repeat;
-  animation: backgroundAnimation 25s linear infinite;
   z-index: -1;
+  overflow: hidden;
 }
 
-/* Parallax Background Animation */
-@keyframes backgroundAnimation {
-  0% {
-    background-position: 0 0;
+#stars1, #stars2, #stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('your-parallax-image.jpg') repeat;
+  animation: moveStars 100s linear infinite;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translate(0, 0);
   }
-  100% {
-    background-position: 100% 100%;
+  to {
+    transform: translate(-100%, 100%);
   }
 }
 
-/* Profile Picture */
+/* Profile Section */
 #profilePicture {
   display: block;
   margin: 30px auto;
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  overflow: hidden;
   border: 3px solid gold;
-  transition: transform 0.3s ease, filter 0.2s ease;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
 }
 
 #profilePicture img {
@@ -58,178 +45,41 @@ body {
   object-fit: cover;
 }
 
-#profilePicture:hover {
-  transform: translate(-50%, -50%) scale(1.1);
-  filter: brightness(1.2);
-}
-
-#profilePicture:active {
-  transform: translate(-50%, -50%) scale(1);
-  filter: brightness(1);
-}
-
-/* User Name */
-#userName {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: gold; /* Gold color */
-  transition: color 0.3s ease;
-  position: fixed;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#userName:hover {
-  color: #ffd700;
-}
-
 /* Links Section */
 #links {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-  width: 100%;
-  padding: 0 10px;
-  position: fixed;
-  top: 70%;
-  left: 50%;
-  transform: translateX(-50%);
-  overflow-y: auto; /* Allows vertical scrolling */
-  max-height: 60vh;
-  scrollbar-width: thin;
-  scrollbar-color: #ff0000 #121212;
 }
 
-/* Style for Links */
+/* Link Styling */
 .link {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: gold;
-  border: 2px solid white;
   color: black;
   font-size: 1.5rem;
   font-weight: bold;
-  text-transform: uppercase;
   padding: 15px 20px;
   border-radius: 8px;
-  width: 100%;
-  max-width: 350px;
-  margin: 12px auto;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-  position: relative;
+  margin: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.link::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: white;
-  border-radius: 4px;
-  width: calc(100% + 4px);
-  margin-left: -2px;
-}
-
+/* Hover Effects */
 .link:hover {
+  background-color: red;
   transform: translateY(-5px);
-  background-color: #ff0000;
-  color: white;
-  opacity: 0.9;
 }
 
-.link:active {
-  transform: scale(0.98);
-  background-color: #1e90ff;
-  color: white;
-  opacity: 1;
-  box-shadow: 0 5px 15px rgba(0, 0, 255, 0.8);
-}
-
-.link:not(:hover):not(:active) {
-  transform: none;
-  background-color: gold;
-  color: black;
-  box-shadow: none;
-  opacity: 1;
-}
-
-/* Icon Styling */
-.link i {
-  margin-right: 15px;
-  font-size: 1.8rem;
-  transition: transform 0.3s ease;
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
   text-align: center;
   padding: 10px 0;
+  background-color: black;
   color: white;
   font-size: 0.9rem;
-  background-color: black;
-  border-top: 1px solid gold;
-}
-
-/* Responsiveness for medium screens */
-@media screen and (max-width: 768px) {
-  #userName {
-    font-size: 1.5rem;
-  }
-
-  #profilePicture {
-    width: 100px;
-    height: 100px;
-  }
-
-  .link {
-    font-size: 1.2rem;
-    padding: 12px 18px;
-    width: 90%;
-    max-width: 300px;
-  }
-}
-
-/* Responsiveness for smaller screens */
-@media screen and (max-width: 480px) {
-  #profilePicture {
-    width: 80px;
-    height: 80px;
-  }
-
-  #userName {
-    font-size: 1.2rem;
-  }
-
-  .link {
-    font-size: 1rem;
-    padding: 10px 16px;
-    width: 90%;
-    max-width: 260px;
-  }
-}
-
-/* For very small screens */
-@media screen and (max-width: 375px) {
-  #userName {
-    font-size: 1rem;
-  }
-
-  .link {
-    font-size: 0.9rem;
-    padding: 8px 14px;
-    width: 100%;
-    max-width: 240px;
-  }
-
-  #profilePicture {
-    width: 70px;
-    height: 70px;
-  }
 }
