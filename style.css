@@ -42,17 +42,18 @@ html, body {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px; /* Lebar scrollbar */
+  height: 8px; /* Menambah ukuran tinggi scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1e90ff; /* Warna biru pada scrollbar */
+  background-color: #ff0000; /* Warna merah pada scrollbar */
   border-radius: 10px;
   border: 3px solid #121212; /* Border yang lebih tajam */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #4682b4; /* Warna biru lebih terang saat hover */
+  background-color: #b30000; /* Warna merah lebih gelap saat hover */
 }
 
 ::-webkit-scrollbar-track {
