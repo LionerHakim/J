@@ -2,27 +2,27 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #121212; /* Dark background */
-  color: white;
-  overflow: hidden; /* Hide scrollbars */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #f7f7f7; /* Light background to match iOS style */
+  color: #333; /* Darker text for readability */
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease;
+  overflow: hidden;
 }
 
 /* Profile Picture */
 #profilePicture {
   display: block;
   margin: 20px auto;
-  width: 100px; /* Reduced size */
-  height: 100px; /* Reduced size */
+  width: 90px; /* Adjusted to be slightly smaller for iOS-style */
+  height: 90px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid gold;
+  border: 2px solid #dcdcdc; /* Softer border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for iOS feel */
   transition: transform 0.3s ease, filter 0.2s ease;
 }
 
@@ -33,8 +33,8 @@ body {
 }
 
 #profilePicture:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 #profilePicture:active {
@@ -45,15 +45,15 @@ body {
 /* User Name */
 #userName {
   text-align: center;
-  font-size: 1.5rem; /* Reduced size */
-  font-weight: bold;
-  margin-top: 10px;
-  color: gold;
+  font-size: 1.3rem; /* Smaller size for cleaner look */
+  font-weight: 500;
+  margin-top: 12px;
+  color: #333;
   transition: color 0.2s ease;
 }
 
 #userName:hover {
-  color: #ffd700; /* Lighter gold on hover */
+  color: #007aff; /* Blue on hover, typical iOS color */
 }
 
 /* Links Section */
@@ -61,9 +61,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px; /* Reduced space */
+  margin-top: 20px;
+  padding: 0 15px; /* Added padding for better spacing */
   width: 100%;
-  padding: 0 10px; /* Spacing on left and right */
+  max-width: 350px;
+  border-radius: 16px; /* Rounded container like iOS */
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for the links container */
 }
 
 /* Style for Links */
@@ -71,99 +75,65 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: gold;
-  border: 2px solid white;
-  color: black;
-  font-size: 1.2rem; /* Reduced font size */
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 12px 16px; /* Reduced padding */
+  background-color: #f0f0f5;
+  border: 1px solid #ddd;
+  color: #007aff;
+  font-size: 1.1rem; /* Smaller font size for cleaner look */
+  font-weight: 400;
+  padding: 10px 15px;
   border-radius: 8px;
   width: 100%;
-  max-width: 300px; /* Reduced max width */
-  margin: 10px auto; /* Reduced margin */
+  margin: 8px 0; /* Smaller margin for compact look */
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.link::after {
-  content: '';
-  position: absolute;
-  bottom: -6px; /* Adjusted position */
-  left: 0;
-  right: 0;
-  height: 4px;
-  background-color: white;
-  border-radius: 4px;
-  width: calc(100% + 4px);
-  margin-left: -2px;
-}
-
-/* Hover Effect */
 .link:hover {
-  transform: translateY(-5px);
-  background-color: #ff0000; /* Red on hover */
-  color: white;
-  opacity: 0.9;
+  background-color: #e2e2f2; /* Slight gray background for hover */
+  transform: translateY(-3px);
 }
 
-/* Active/Clicked Effect */
 .link:active {
+  background-color: #d0d0d6; /* Darker gray on active */
   transform: scale(0.98);
-  background-color: #1e90ff; /* Blue on click */
-  color: white;
-  opacity: 1;
-  box-shadow: 0 5px 15px rgba(0, 0, 255, 0.8);
+  box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3); /* Blue shadow on click */
 }
 
-/* Reset State */
-.link:not(:hover):not(:active) {
-  transform: none;
-  background-color: gold;
-  color: black;
-  box-shadow: none;
-  opacity: 1;
-}
-
-/* Icon Styling */
 .link i {
-  margin-right: 12px; /* Adjusted icon margin */
-  font-size: 1.6rem; /* Slightly smaller icon size */
-  transition: transform 0.3s ease;
+  margin-right: 12px;
+  font-size: 1.5rem;
 }
 
 /* Footer Styling */
 footer {
   text-align: center;
-  margin-top: 20px; /* Reduced space */
-  padding: 8px 0; /* Reduced padding */
-  color: white;
-  font-size: 0.9rem;
-  background-color: black;
-  border-top: 1px solid gold;
+  margin-top: 30px;
+  padding: 10px;
+  color: #999;
+  font-size: 0.85rem;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsiveness for medium screens */
+/* Responsive Styling for iOS Look */
 @media screen and (max-width: 768px) {
   #userName {
-    font-size: 1.3rem; /* Smaller font for medium screens */
+    font-size: 1.2rem;
   }
 
   #profilePicture {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
   }
 
   .link {
-    font-size: 1.1rem; /* Smaller font for links */
-    padding: 10px 14px; /* Smaller padding */
+    font-size: 1rem;
+    padding: 8px 12px;
     width: 90%;
-    max-width: 280px; /* Reduced width */
   }
 }
 
-/* Responsiveness for smaller screens */
 @media screen and (max-width: 480px) {
   #profilePicture {
     width: 70px;
@@ -171,32 +141,30 @@ footer {
   }
 
   #userName {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .link {
-    font-size: 1rem;
-    padding: 8px 12px;
+    font-size: 0.9rem;
+    padding: 7px 10px;
     width: 90%;
-    max-width: 250px; /* Reduced width */
   }
 }
 
 /* For very small screens */
 @media screen and (max-width: 375px) {
   #userName {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .link {
-    font-size: 0.9rem;
-    padding: 8px 10px;
+    font-size: 0.85rem;
+    padding: 6px 8px;
     width: 100%;
-    max-width: 230px; /* Further reduced width */
   }
 
   #profilePicture {
     width: 60px;
-    height: 60px; /* Smaller size on very small screens */
+    height: 60px;
   }
 }
