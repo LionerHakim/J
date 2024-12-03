@@ -181,12 +181,12 @@ html, body {
 
 /* Footer Styling */
 footer {
-  text-align: center;          /* Pusatkan teks */
-  margin-top: 30px;            /* Jarak dari elemen sebelumnya */
-  padding: 10px 0;             /* Padding atas dan bawah */
-  color: #333;                 /* Warna teks (ubah sesuai kebutuhan) */
-  font-size: 0.8rem;           /* Ukuran font */
-  border-top: 1px solid #ddd;  /* Garis pemisah atas */
+  text-align: center;   /* Pusatkan teks */
+  margin-top: 30px;     /* Jarak dari elemen sebelumnya */
+  padding: 10px 0;      /* Padding atas dan bawah */
+  color: #fff;          /* Warna teks putih */
+  font-size: 0.8rem;    /* Ukuran font */
+  background-color: transparent; /* Transparansi latar belakang */
 }
 
 /* Responsiveness for medium screens */
