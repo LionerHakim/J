@@ -3,14 +3,59 @@ body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  background-color: #121212; /* Dark background for the whole page */
-  color: #f7f7f7; /* Light text for contrast */
+  background-color: #121212; /* Dark background */
+  color: #f7f7f7; /* Light text */
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+/* Animated Background (Stars) */
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#stars1, #stars2, #stars3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  animation: moveStars 50s linear infinite;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+#stars1 {
+  background-image: url('stars1.png'); /* Add your star image */
+  opacity: 0.5;
+}
+
+#stars2 {
+  background-image: url('stars2.png');
+  opacity: 0.3;
+}
+
+#stars3 {
+  background-image: url('stars3.png');
+  opacity: 0.2;
 }
 
 /* Profile Picture */
@@ -21,8 +66,8 @@ body {
   height: 90px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #dcdcdc; /* Softer border */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for iOS feel */
+  border: 2px solid #dcdcdc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, filter 0.2s ease;
 }
 
@@ -62,76 +107,26 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  padding: 0 15px;
+  padding: 10px 15px;
   width: 100%;
   max-width: 350px;
   border-radius: 16px;
-  background-color: #ffcc00; /* Golden yellow */
+  background-color: #ff0000; /* Red background for links */
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
 }
 
-/* Adding elegant "before" effect */
-#links::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #ffcc00 20%, #ff9900 80%);
-  opacity: 0.2;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-/* Style for Links */
+/* Individual Links */
 .link {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: #f0f0f5;
-/* Links Section */
-#links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  padding: 0 15px;
-  width: 100%;
-  max-width: 350px;
-  border-radius: 16px;
-  background-color: #ff4c4c; /* Red background for the links section */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Adding elegant "before" effect */
-#links::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #ff4c4c 20%, #ff1a1a 80%); /* Red gradient effect */
-  opacity: 0.2;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-/* Style for Links */
-.link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: #f0f0f5;
-  border: 1px solid #ddd;
-  color: #007aff; /* Initial text color - Blue */
+  background-color: #ffe6e6; /* Light red for links */
+  border: 1px solid #ff0000;
+  color: #0000ff; /* Blue font */
   font-size: 1.1rem;
-  font-weight: bold; /* Bold font for links */
+  font-weight: bold; /* Bold font */
   padding: 10px 15px;
   border-radius: 8px;
   width: 100%;
@@ -140,47 +135,18 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
-/* Hover Effect for Links */
+/* Hover Effect */
 .link:hover {
-  background-color: #e2e2f2; /* Slight gray background for hover */
+  background-color: #ffcccb; /* Light red */
   transform: translateY(-3px);
-  color: #ff4c4c; /* Change color to red on hover */
+  color: #0000ff; /* Keep font blue */
 }
 
-/* Before click effect */
-.link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 76, 76, 0.1); /* Soft red glow */
-  transition: background-color 0.3s ease;
-}
-
-.link:hover::before {
-  background-color: rgba(255, 76, 76, 0.3); /* Stronger red glow on hover */
-}
-
-/* After click effect */
-.link:active {
-  background-color: #d0d0d6;
-  transform: scale(0.98);
-  box-shadow: 0 5px 20px rgba(255, 76, 76, 0.5); /* Red shadow on click */
-  color: #fff; /* Change text color to white on click */
-  transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
-}
-
-/* Remove box-shadow once the click is over */
-.link:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.link i {
-  margin-right: 12px;
-  font-size: 1.5rem;
+/* Click Effect */
+.link.clicked {
+  background-color: #ff8080; /* Darker red on click */
+  transform: scale(0.95);
+  box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5); /* Red shadow */
 }
 
 /* Footer Styling */
@@ -190,12 +156,12 @@ footer {
   padding: 10px;
   color: #999;
   font-size: 0.85rem;
-  background-color: #121212; /* Dark footer background */
+  background-color: #121212;
   width: 100%;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Styling for iOS Look */
+/* Responsive Styling */
 @media screen and (max-width: 768px) {
   #userName {
     font-size: 1.2rem;
@@ -230,7 +196,6 @@ footer {
   }
 }
 
-/* For very small screens */
 @media screen and (max-width: 375px) {
   #userName {
     font-size: 0.9rem;
