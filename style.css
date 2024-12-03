@@ -1,38 +1,38 @@
 /* Universal Styling */
-body {
+html, body {
+  height: 100%; /* Membuat body dan html mengambil penuh tinggi layar */
+  width: 100%; /* Membuat body dan html mengambil penuh lebar layar */
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: #121212; /* Warna latar belakang hitam gelap */
   color: white;
-  height: 100%; /* Ganti dari 100vh ke 100% agar konten bisa di-scroll */
+  overflow-y: scroll; /* Pastikan scroll hanya vertikal */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Agar konten tidak terpusat di tengah */
+  justify-content: flex-start;
   align-items: center;
-  overflow-y: auto; /* Menambahkan scroll vertikal */
   transition: background-color 0.3s ease;
 }
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px; /* Lebar scrollbar */
-  height: 12px; /* Tinggi scrollbar pada elemen horizontal */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1e90ff; /* Warna biru pada scrollbar */
+  border-radius: 10px;
+  border: 3px solid #121212; /* Memberikan border untuk menonjolkan scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4682b4; /* Warna biru lebih terang saat hover */
 }
 
 ::-webkit-scrollbar-track {
   background-color: #333; /* Warna latar belakang track scrollbar */
   border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #007bff; /* Warna biru untuk thumb scrollbar */
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #0056b3; /* Warna biru lebih gelap saat hover */
 }
 
 /* Profile Picture */
