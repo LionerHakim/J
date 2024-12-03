@@ -3,9 +3,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #121212; /* Warna latar belakang hitam gelap */
+  background-color: #121212; /* Dark background */
   color: white;
-  overflow: hidden; /* Hilangkan scroll */
+  overflow: hidden; /* Hide scrollbars */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,12 +48,12 @@ body {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 10px;
-  color: gold; /* Warna emas */
+  color: gold;
   transition: color 0.2s ease;
 }
 
 #userName:hover {
-  color: #ffd700; /* Warna lebih cerah saat hover */
+  color: #ffd700; /* Lighter gold on hover */
 }
 
 /* Links Section */
@@ -63,7 +63,7 @@ body {
   align-items: center;
   margin-top: 30px;
   width: 100%;
-  padding: 0 10px; /* Memberikan ruang di sisi kiri dan kanan */
+  padding: 0 10px; /* Spacing on left and right */
 }
 
 /* Style for Links */
@@ -71,20 +71,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: gold; /* Warna emas */
-  border: 2px solid white; /* Border putih */
+  background-color: gold;
+  border: 2px solid white;
   color: black;
-  font-size: 1.5rem; /* Ukuran font besar */
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   padding: 15px 20px;
   border-radius: 8px;
-  width: 100%; /* Menggunakan 100% lebar pada perangkat kecil */
-  max-width: 350px; /* Batas lebar maksimum */
-  margin: 12px auto; /* Jarak antar balok */
+  width: 100%;
+  max-width: 350px;
+  margin: 12px auto;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-  position: relative; /* Untuk garis putih */
+  position: relative;
 }
 
 .link::after {
@@ -96,40 +96,40 @@ body {
   height: 4px;
   background-color: white;
   border-radius: 4px;
-  width: calc(100% + 4px); /* Lebih lebar dari balok */
-  margin-left: -2px; /* Sesuaikan posisi */
+  width: calc(100% + 4px);
+  margin-left: -2px;
 }
 
 /* Hover Effect */
 .link:hover {
   transform: translateY(-5px);
-  background-color: #ff0000; /* Warna merah saat hover */
-  color: white; /* Mengubah warna teks menjadi putih agar kontras */
+  background-color: #ff0000; /* Red on hover */
+  color: white;
   opacity: 0.9;
 }
 
 /* Active/Clicked Effect */
 .link:active {
   transform: scale(0.98);
-  background-color: #1e90ff; /* Warna biru saat diklik */
-  color: white; /* Warna teks putih */
+  background-color: #1e90ff; /* Blue on click */
+  color: white;
   opacity: 1;
   box-shadow: 0 5px 15px rgba(0, 0, 255, 0.8);
 }
 
 /* Reset State */
 .link:not(:hover):not(:active) {
-  transform: none; /* Tidak ada transformasi */
-  background-color: gold; /* Kembali ke warna awal */
-  color: black; /* Kembali ke teks awal */
-  box-shadow: none; /* Hilangkan bayangan */
-  opacity: 1; /* Tidak ada transparansi */
+  transform: none;
+  background-color: gold;
+  color: black;
+  box-shadow: none;
+  opacity: 1;
 }
 
 /* Icon Styling */
 .link i {
   margin-right: 15px;
-  font-size: 1.8rem; /* Ukuran icon */
+  font-size: 1.8rem;
   transition: transform 0.3s ease;
 }
 
@@ -147,19 +147,19 @@ footer {
 /* Responsiveness for medium screens */
 @media screen and (max-width: 768px) {
   #userName {
-    font-size: 1.5rem; /* Menyesuaikan ukuran font pada layar lebih kecil */
+    font-size: 1.5rem;
   }
 
   #profilePicture {
-    width: 100px; /* Ukuran foto lebih kecil pada layar kecil */
+    width: 100px;
     height: 100px;
   }
 
   .link {
-    font-size: 1.2rem; /* Menyesuaikan ukuran font link */
+    font-size: 1.2rem;
     padding: 12px 18px;
-    width: 90%; /* Lebar link lebih kecil pada perangkat kecil */
-    max-width: 300px; /* Batas lebar */
+    width: 90%;
+    max-width: 300px;
   }
 }
 
@@ -167,36 +167,36 @@ footer {
 @media screen and (max-width: 480px) {
   #profilePicture {
     width: 80px;
-    height: 80px; /* Ukuran lebih kecil di perangkat lebih kecil */
+    height: 80px;
   }
 
   #userName {
-    font-size: 1.2rem; /* Ukuran font lebih kecil di perangkat kecil */
+    font-size: 1.2rem;
   }
 
   .link {
-    font-size: 1rem; /* Lebih kecil lagi ukuran font link */
+    font-size: 1rem;
     padding: 10px 16px;
-    width: 90%; /* Lebar link lebih kecil */
-    max-width: 260px; /* Batas lebar link */
+    width: 90%;
+    max-width: 260px;
   }
 }
 
 /* For very small screens */
 @media screen and (max-width: 375px) {
   #userName {
-    font-size: 1rem; /* Ukuran font lebih kecil */
+    font-size: 1rem;
   }
 
   .link {
-    font-size: 0.9rem; /* Ukuran font sangat kecil pada layar ekstra kecil */
+    font-size: 0.9rem;
     padding: 8px 14px;
-    width: 100%; /* Lebar penuh pada perangkat lebih kecil */
-    max-width: 240px; /* Ukuran lebih kecil */
+    width: 100%;
+    max-width: 240px;
   }
 
   #profilePicture {
     width: 70px;
-    height: 70px; /* Ukuran sangat kecil pada layar kecil */
+    height: 70px;
   }
 }
