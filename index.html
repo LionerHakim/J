@@ -8,83 +8,65 @@
     <link rel="icon" href="J.png" type="image/x-icon" />
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Core theme CSS -->
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="scroll-container">
+      <div class="content-wrapper">
+        <!-- Profile Section -->
+        <a id="profilePicture" href="#popup">
+          <img src="J.png" alt="Profile Picture">
+        </a>
 
-    <!-- Profile Section -->
-    <a id="profilePicture" href="#popup">
-      <img src="J.png" alt="Profile Picture">
-    </a>
+        <div id="userName">
+          J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
+        </div>
 
-    <div id="userName">
-  J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
-</div>
+        <!-- Links Section -->
+        <div id="links">
+          <a class="link" href="https://lionerhakim.github.io/J./" target="_blank">
+            <i class="fa fa-globe"></i> MY PROFILE
+          </a>
+          <a class="link" href="https://www.tiktok.com/@j.xrp?_t=8rsI9JOmaIy&_r=1" target="_blank">
+            <i class="fa fa-video"></i> TIKTOK
+          </a>
+          <a class="link" href="https://lionerhakim.github.io/SelamatLove" target="_blank">
+            <i class="fa fa-heart"></i> SELAMAT LOVE
+          </a>
+          <a class="link" href="https://lionerhakim.github.io/Ultah" target="_blank">
+            <i class="fa fa-birthday-cake"></i> ULTAH FOR YOU
+          </a>
+          <a class="link" href="https://one.exnesstrack.org/a/5xww7w9ptk?platform=mobile&pid=mobile_share" target="_blank">
+            <i class="fa fa-chart-line"></i> EXNESS
+          </a>
+          <a class="link" href="https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=id&ref=CPA_00506M8DY9" target="_blank">
+            <i class="fa fa-chart-bar"></i> BINANCE
+          </a>
+          <a class="link" href="https://share.bitget.com/u/B017HHAZ" target="_blank">
+            <i class="fa fa-coins"></i> BITGET
+          </a>
+          <a class="link" href="https://app.nodepay.ai/register?ref=xL6FUpR5S6uRwhm" target="_blank">
+            <i class="fa fa-credit-card"></i> NODEPAY
+          </a>
+          <a class="link" href="https://app.getgrass.io/register/?referralCode=95_EpDEYOPlvI_q" target="_blank">
+            <i class="fa fa-leaf"></i> GRASS
+          </a>
+          <a class="link" href="https://bless.network/dashboard?ref=RVQM4U" target="_blank">
+            <i class="fa fa-gem"></i> BLESS NETWORK
+          </a>
+        </div>
 
-    <!-- Links Section -->
-    <div id="links">
-      <a class="link" href="https://lionerhakim.github.io/J./" target="_blank">
-        <i class="fa fa-globe"></i> MY PROFILE
-      </a>
-      <a class="link" href="https://www.tiktok.com/@j.xrp?_t=8rsI9JOmaIy&_r=1" target="_blank">
-        <i class="fa fa-video"></i> TIKTOK
-      </a>
-      <a class="link" href="https://lionerhakim.github.io/SelamatLove" target="_blank">
-        <i class="fa fa-heart"></i> SELAMAT LOVE
-      </a>
-      <a class="link" href="https://lionerhakim.github.io/Ultah" target="_blank">
-        <i class="fa fa-birthday-cake"></i> ULTAH FOR YOU
-      </a>
-      <a class="link" href="https://one.exnesstrack.org/a/5xww7w9ptk?platform=mobile&pid=mobile_share" target="_blank">
-        <i class="fa fa-chart-line"></i> EXNESS
-      </a>
-      <a class="link" href="https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=id&ref=CPA_00506M8DY9" target="_blank">
-        <i class="fa fa-chart-bar"></i> BINANCE
-      </a>
-      <a class="link" href="https://share.bitget.com/u/B017HHAZ" target="_blank">
-        <i class="fa fa-coins"></i> BITGET
-      </a>
-      <!-- New Links Added -->
-      <a class="link" href="https://app.nodepay.ai/register?ref=xL6FUpR5S6uRwhm" target="_blank">
-        <i class="fa fa-credit-card"></i> NODEPAY
-      </a>
-      <a class="link" href="https://app.getgrass.io/register/?referralCode=95_EpDEYOPlvI_q" target="_blank">
-        <i class="fa fa-leaf"></i> GRASS
-      </a>
-      <a class="link" href="https://bless.network/dashboard?ref=RVQM4U" target="_blank">
-        <i class="fa fa-gem"></i> BLESS NETWORK
-      </a>
+        <!-- Footer -->
+        <footer>
+          Copyright &copy; <span id="year"></span> JRH. All Rights Reserved.
+        </footer>
+      </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-      Copyright &copy; <span id="year"></span> JRH. All Rights Reserved.
-    </footer>
 
     <script>
       // Update tahun secara otomatis
       document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Menambahkan event listener untuk setiap link
-      document.querySelectorAll('.link').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault(); // Mencegah pengalihan langsung
-
-          // Menghapus efek klik segera setelah diklik
-          link.classList.add('clicked'); // Menambahkan kelas clicked untuk styling khusus
-
-          // Menghilangkan efek klik setelah 50ms
-          setTimeout(function() {
-            link.classList.remove('clicked'); // Menghapus kelas clicked setelah efek hilang
-          }, 50); // Waktu singkat untuk reset efek
-
-          // Mengalihkan ke URL setelah 169ms
-          setTimeout(function() {
-            window.location.href = link.href; // Mengalihkan ke URL setelah efek hilang
-          }, 169);
-        });
-      });
     </script>
   </body>
 </html>
