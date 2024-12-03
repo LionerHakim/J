@@ -49,7 +49,7 @@ html, body {
 ::-webkit-scrollbar-thumb {
   background-color: #ff0000; /* Warna merah pada scrollbar */
   border-radius: 10px;
-  border: 6px solid #121212; /* Border yang lebih tajam */
+  border: 3px solid #121212; /* Border yang lebih tajam */
 }
 
 ::-webkit-scrollbar-thumb:hover {
