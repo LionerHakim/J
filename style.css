@@ -10,7 +10,14 @@ html, body {
   justify-content: center; /* Center konten */
   align-items: flex-start;
   box-sizing: border-box;
-  overflow-x: hidden; /* Menghilangkan scroll horizontal di body */
+  overflow-x: hidden; /* Menghilangkan scroll horizontal */
+}
+
+/* Terapkan box-sizing untuk semua elemen */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* Container utama dengan Scroll */
@@ -25,11 +32,12 @@ html, body {
 
 /* Wrapper untuk konten utama */
 .content-wrapper {
-  width: 100%;
+  width: 100%; /* Menyesuaikan lebar */
   height: 100%;
   overflow-y: scroll; /* Scroll hanya vertikal */
   padding: 10px; /* Memberikan jarak konten dari scroll */
-  margin: 0 30px; /* Memberikan jarak di kiri dan kanan konten */
+  margin: 0 auto; /* Memastikan tidak ada margin horizontal */
+  max-width: 100%; /* Mencegah meluas keluar viewport */
 }
 
 /* Scrollbar Styling */
